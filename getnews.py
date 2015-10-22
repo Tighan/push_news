@@ -44,6 +44,6 @@ def send_message(title):
 
 title_now=get_title_from_web(url)
 title_data=get_title_from_database()
-if title_now!=title_data:
-	update_title(title_now)
-send_message(title_now)
+if title_now!=title_data[0]:
+    update_title(title_now)
+    send_message(title_now)
