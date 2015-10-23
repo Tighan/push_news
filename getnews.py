@@ -8,7 +8,7 @@ header={"User-Agent":"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, li
 url='http://222.78.8.187:4505/otype.asp?classid=1'
 
 #-----------------------------
-cx=sqlite3.connect('D:\\bl\\data.db')
+cx=sqlite3.connect('/root/push_news/data.db')
 cu=cx.cursor()
 h=httplib2.Http()
 #cx.execute('create table gs(id,title)')
@@ -47,3 +47,4 @@ title_data=get_title_from_database()
 if title_now!=title_data[0]:
     update_title(title_now)
     send_message(title_now)
+print('have fun')
