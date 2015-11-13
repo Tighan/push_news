@@ -2,10 +2,11 @@ import httplib2,time,sqlite3
 from bs4 import BeautifulSoup
 import smtplib  
 from email.mime.text import MIMEText  
-from email.header import Header 
+from email.header import Header
+from gettime import printtime 
 #-----------------------------
 header={"User-Agent":"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36 LBBROWSER"}
-url='http://222.78.8.187:4505/otype.asp?classid=1'
+url='http://110.85.164.235:4505/otype.asp?classid=1'
 
 #-----------------------------
 cx=sqlite3.connect('/root/push_news/data.db')
@@ -47,4 +48,4 @@ title_data=get_title_from_database()
 if title_now!=title_data[0]:
     update_title(title_now)
     send_message(title_now)
-print('have fun')
+print('update at'),printtime() 
