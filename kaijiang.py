@@ -4,7 +4,7 @@ import smtplib
 from email.mime.text import MIMEText  
 from email.header import Header 
 import sqlite3
-cx=sqlite3.connect('D:\\bl\\KJ.db')
+cx=sqlite3.connect('/root/push_news/kjdb.db')
 cu=cx.cursor()
 #cx.execute('create table kaijiang(id,text)')
 #cx.execute('insert into kaijiang values(0,null)')

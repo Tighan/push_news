@@ -6,7 +6,7 @@ from email.header import Header
 from gettime import printtime 
 #-----------------------------
 header={"User-Agent":"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36 LBBROWSER"}
-url='http://110.85.164.235:4505/otype.asp?classid=1'
+url='http://110.85.164.243:4505/otype.asp?classid=1'
 
 #-----------------------------
 cx=sqlite3.connect('/root/push_news/data.db')
