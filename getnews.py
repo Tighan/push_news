@@ -42,10 +42,27 @@ def send_message(title):
 	smtp.login(username, password)  
 	smtp.sendmail(sender, receiver, msg.as_string())  
 	smtp.quit()  
-
-title_now=get_title_from_web(url)
-title_data=get_title_from_database()
-if title_now!=title_data[0]:
-    update_title(title_now)
-    send_message(title_now)
-print('update at'),printtime() 
+def send_error(err):
+	sender='421346755@qq.com'
+	receiver='2575545003@qq.com'
+	subject='出错提醒-->'+err
+	smtpserver='smtp.qq.com'
+	username='421346755@qq.com'
+	password='han19940706'
+	text="服务出错,请尽快排查"+'\n'+'本次报错提示为：'+err
+	msg=MIMEText(text,'plain','utf-8')
+	msg['Subject'] = Header(subject,'utf-8')
+	smtp = smtplib.SMTP()  
+	smtp.connect(smtpserver)  
+	smtp.login(username, password)  
+	smtp.sendmail(sender, receiver, msg.as_string())  
+	smtp.quit()
+try:  
+	title_now=get_title_from_web(url)
+	title_data=get_title_from_database()
+	if title_now!=title_data[0]:
+    	update_title(title_now)
+    	send_message(title_now)
+	print('update at'),printtime()
+except Exception,e:
+	send_error(str(e)) 
