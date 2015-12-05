@@ -6,7 +6,7 @@ from email.header import Header
 from gettime import printtime 
 #-----------------------------
 header={"User-Agent":"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36 LBBROWSER"}
-url='http://110.85.164.243:4505/otype.asp?classid=1'
+url='http://www.zzwzy.com/otype.asp?classid=1'
 
 #-----------------------------
 cx=sqlite3.connect('/root/push_news/data.db')
@@ -61,8 +61,8 @@ try:
 	title_now=get_title_from_web(url)
 	title_data=get_title_from_database()
 	if title_now!=title_data[0]:
-    	update_title(title_now)
-    	send_message(title_now)
+	    update_title(title_now)
+	    send_message(title_now)
 	print('update at'),printtime()
-except Exception,e:
+except Exception as e:
 	send_error(str(e)) 
