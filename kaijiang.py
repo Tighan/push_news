@@ -42,7 +42,7 @@ def send_message(QS,T,SX,YS):
     subject='开奖公告-->第'+QS+'期'
     smtpserver='smtp.qq.com'
     username='421346755@qq.com'
-    password='han19940706'
+    password='*************'
     text="开奖了╭(￣m￣*)╮，好紧张！"+'\n'+'期数:'+QS+'\n'+'特码:'+T+'\n'+'生肖:'+SX+'\n'+'颜色:'+YS
     msg=MIMEText(text,'plain','utf-8')
     msg['Subject'] = Header(subject,'utf-8')
