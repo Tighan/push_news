@@ -9,11 +9,11 @@ cu=cx.cursor()
 #cx.execute('create table kaijiang(id,text)')
 #cx.execute('insert into kaijiang values(0,null)')
 header={"User-Agent":"Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.152 Safari/537.36 LBBROWSER"}
-http=httplib2.Http()
+http=httplib2.Http(timeout=300)
 url='http://www.77190.com:98/wz/scores1.xml'
 init=''
 animals=['鼠','牛','虎','兔','龙','蛇','马','羊','猴','鸡','狗','猪']
-key=[8,7,6,5,4,3,2,1,12,11,10,9]
+key=[9,8,7,6,5,4,3,2,1,12,11,10]
 dic=dict(zip(key,animals))
 red=[1,2,7,8,12,13,18,19,23,24,29,30,34,35,40,45,46]
 blue=[3,4,9,10,14,15,20,25,26,31,36,37,41,42,47,48]
@@ -32,7 +32,7 @@ def return_animal(num):
     if num in red:
         bo='红波'
     elif num in blue:
-        bp='蓝波'
+        bo='蓝波'
     else:
         bo='绿波'
     return (dic[num],bo)
