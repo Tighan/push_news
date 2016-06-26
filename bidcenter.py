@@ -33,7 +33,7 @@ def send_message(title):
 	subject='更新公告-->'+title
 	smtpserver='smtp.qq.com'
 	username='421346755@qq.com'
-	password='han19940706'
+	password='*********'
 	text="你关注的公告有更新辣o(≧v≦)o~~!!"+'\n'+'本次更新公告标题为：'+title
 	msg=MIMEText(text,'plain','utf-8')
 	msg['Subject'] = Header(subject,'utf-8')
@@ -48,7 +48,7 @@ def send_error(err):
 	subject='出错提醒-->'+err
 	smtpserver='smtp.qq.com'
 	username='421346755@qq.com'
-	password='han19940706'
+	password='******'
 	text="服务出错,请尽快排查"+'\n'+'本次报错提示为：'+err
 	msg=MIMEText(text,'plain','utf-8')
 	msg['Subject'] = Header(subject,'utf-8')
